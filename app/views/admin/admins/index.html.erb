@@ -1,0 +1,46 @@
+<div class="page-header">
+  <%= link_to new_admin_admin_path, class: 'btn btn-success pull-right' do %>
+    <i class="glyphicon glyphicon-plus"></i>
+    New Admin
+  <% end %>
+  <h1>Admins</h1>
+</div>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Display name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admins.each do |admin| %>
+      <tr>
+                <td><%= link_to admin.display_name, [:admin, admin] %></td>
+                <td><%= link_to admin.email, [:admin, admin] %></td>
+                <td class="text-right">
+          <%= link_to 'Edit', edit_admin_admin_path(admin), class: 'btn btn-primary' %>
+        </td>
+        <td class="text-right">
+          <%= link_to 'Destroy', [:admin, admin], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="row">
+  <div class="col-md-8">
+    <%= paginate @admins, theme: 'admin-bootstrap' %>
+  </div>
+  <div class="col-md-4 text-right">
+    <div class="btn-group per-page">
+     <% [ 10, 25, 100, 250, 500, 1000 ].each do |i| %>
+      <%= link_to i, params.merge(page: 1, per_page: i), class: "btn #{per_page_class(Admin, i)}" %>
+    <% end %>
+    </div>
+  </div>
+</div>

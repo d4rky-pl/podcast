@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to admin_admins_path, class: 'btn btn-default pull-right' do %>
+    <i class="glyphicon glyphicon-list-alt"></i>
+    Back
+  <% end %>
+  <%= link_to [:admin, @admin], class: 'btn btn-primary pull-right' do %>
+    <i class="glyphicon glyphicon-info-sign"></i>
+    Show
+  <% end %>
+  <h1>Editing Admin</h1>
+</div>
+
+<%= render 'form' %>

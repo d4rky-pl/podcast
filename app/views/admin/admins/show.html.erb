@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= link_to admin_admins_path, class: 'btn btn-default pull-right' do %>
+    <i class="glyphicon glyphicon-list-alt"></i>
+    Back
+  <% end %>
+  <%= link_to edit_admin_admin_path(@admin), class: 'btn btn-primary pull-right' do %>
+    <i class="glyphicon glyphicon-pencil"></i>
+    Edit
+  <% end %>
+  <h1>Show Admin</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Display name:</dt>
+  <dd><%= @admin.display_name %></dd>
+  <dt>Email:</dt>
+  <dd><%= @admin.email %></dd>
+</dl>

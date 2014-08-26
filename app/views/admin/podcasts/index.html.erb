@@ -1,0 +1,50 @@
+<div class="page-header">
+  <%= link_to new_admin_podcast_path, class: 'btn btn-success pull-right' do %>
+    <i class="glyphicon glyphicon-plus"></i>
+    New Podcast
+  <% end %>
+  <h1>Podcasts</h1>
+</div>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Stream</th>
+      <th>Admin</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @podcasts.each do |podcast| %>
+      <tr>
+                <td><%= link_to podcast.title, [:admin, podcast] %></td>
+                <td><%= link_to podcast.description, [:admin, podcast] %></td>
+                <td><%= link_to podcast.stream, [:admin, podcast] %></td>
+                <td><%= link_to podcast.admin, [:admin, podcast] %></td>
+                <td class="text-right">
+          <%= link_to 'Edit', edit_admin_podcast_path(podcast), class: 'btn btn-primary' %>
+        </td>
+        <td class="text-right">
+          <%= link_to 'Destroy', [:admin, podcast], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="row">
+  <div class="col-md-8">
+    <%= paginate @podcasts, theme: 'admin-bootstrap' %>
+  </div>
+  <div class="col-md-4 text-right">
+    <div class="btn-group per-page">
+     <% [ 10, 25, 100, 250, 500, 1000 ].each do |i| %>
+      <%= link_to i, params.merge(page: 1, per_page: i), class: "btn #{per_page_class(Podcast, i)}" %>
+    <% end %>
+    </div>
+  </div>
+</div>

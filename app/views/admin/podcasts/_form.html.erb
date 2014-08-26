@@ -1,0 +1,15 @@
+<%= simple_bootstrap_form_for [:admin, @podcast] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :stream, as: :file %>
+    <%= f.input :stream_cache, as: :hidden %>
+    <%= f.association :admin %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-primary' %>
+  </div>
+<% end %>
