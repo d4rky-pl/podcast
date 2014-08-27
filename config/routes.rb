@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   
   root 'home#index'
-  get 'podcast/:id', to: 'home#podcast'
-  get 'stream/:id',  to: 'home#stream'
+
+  get 'podcast/:id',  to: 'home#podcast',  as: :podcast
+  get 'stream/:id',   to: 'home#stream',   as: :stream
+  get 'download/:id', to: 'home#download', as: :download
 
   namespace :admin do
     resources :admins

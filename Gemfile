@@ -6,6 +6,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'spring',        group: :development
+gem 'haml-rails'
 
 gem 'admin-panel'
 gem 'devise'
@@ -18,3 +19,10 @@ gem 'carrierwave-video'
 gem 'carrierwave_backgrounder'
 
 gem 'sidekiq'
+
+gem 'redcarpet'
+gem 'github-markup'
+
+gem 'cells', '~> 3.11.2'
+gem 'pry-rails'
+

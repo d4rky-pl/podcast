@@ -22,7 +22,7 @@ class Admin::PodcastsController < ApplicationController
 
   # POST /admin/podcasts
   def create
-    @podcast = Podcast.new(podcast_params)
+    @podcast = current_user.podcasts.new(podcast_params)
 
     if @podcast.save
       redirect_to [:admin, @podcast], notice: 'Podcast was successfully created.'

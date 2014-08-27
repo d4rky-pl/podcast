@@ -1,0 +1,5 @@
+.page-header
+  %h1 Podcasts
+
+- @podcasts.each do |podcast|
+  = cell(:podcast, podcast).call(:index)      
