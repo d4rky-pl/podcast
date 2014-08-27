@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   end
 
   def podcast
-    podcast = Podcast.find(params[:id])
+    @podcast = Podcast.find(params[:id])
   end
 
   def stream
