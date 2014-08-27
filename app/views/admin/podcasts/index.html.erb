@@ -11,8 +11,9 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th>Stream</th>
-      <th>Admin</th>
+      <th>Created at</th>
+      <th>Published at</th>
+      <th>Published?</th>
       <th></th>
       <th></th>
     </tr>
@@ -22,9 +23,18 @@
     <% @podcasts.each do |podcast| %>
       <tr>
                 <td><%= link_to podcast.title, [:admin, podcast] %></td>
-                <td><%= link_to podcast.description, [:admin, podcast] %></td>
-                <td><%= link_to podcast.stream, [:admin, podcast] %></td>
-                <td><%= link_to podcast.admin, [:admin, podcast] %></td>
+                <td><%= link_to truncate(sanitize(podcast.description)), [:admin, podcast] %></td>
+                <td><%= link_to podcast.created_at, [:admin, podcast] %></td>
+                <td><%= link_to podcast.published_at, [:admin, podcast] %></td>
+                <td>
+                  <%= link_to [:admin, podcast] do %>
+                    <% if podcast.published %>
+                      <i class="glyphicon glyphicon-ok text-success"></i>
+                    <% else %>
+                      <i class="glyphicon glyphicon-remove text-danger"></i>
+                    <% end %>
+                  <% end %>
+                </td>
                 <td class="text-right">
           <%= link_to 'Edit', edit_admin_podcast_path(podcast), class: 'btn btn-primary' %>
         </td>

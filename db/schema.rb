@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826182740) do
+ActiveRecord::Schema.define(version: 20140827174410) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20140826182740) do
     t.datetime "updated_at"
     t.boolean  "published"
     t.datetime "published_at"
+    t.integer  "status",         default: 0
+    t.string   "status_message"
   end
 
   add_index "podcasts", ["admin_id"], name: "index_podcasts_on_admin_id"
