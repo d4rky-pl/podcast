@@ -54,6 +54,6 @@ class Admin::PodcastsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def podcast_params
-      params.require(:podcast).permit(:title, :description, :stream, :admin_id)
+      params.require(:podcast).permit(:title, :description, :stream, :admin_id, :published, :stream_cache)
     end
 end
