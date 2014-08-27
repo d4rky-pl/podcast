@@ -26,3 +26,5 @@ gem 'github-markup'
 gem 'cells', '~> 3.11.2'
 gem 'pry-rails'
 
+gem 'better_errors'
+gem 'binding_of_caller'

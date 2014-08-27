@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import 'bootstrap';
 
+.controller-admin-podcasts {
+  textarea {
+    height: 10em
+  }
+}
+
 .per-page {
   margin: $line-height-computed 0;
 }

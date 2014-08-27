@@ -1,4 +1,22 @@
-%h1
-  PodcastView#show
-%p
-  Find me in app/cells/podcast_view/show.html.haml
+.podcast.card.card-primary
+  .card-header
+    %h1= title
+
+  .card-body
+    = description
+
+  .card-audio-player
+    %audio{controls: true}
+      - available_formats.each do |format, content_type|
+        %source{src: stream_path(format), type: content_type}
+
+  .card-footer
+    .row
+      .col-sm-6
+        %small.text-muted
+          = published_at
+      .col-sm-6.text-right
+        - available_formats.each do |format, _|
+          %a.btn.btn-default.btn-xs{href: download_path(format)}
+            %i.glyphicon.glyphicon-download
+            = format.upcase
