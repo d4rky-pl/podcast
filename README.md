@@ -6,6 +6,7 @@ Also, it's written in RoR so modifying it is a breeze, compared to apocalyptic P
 
 ### Important features and fixes
 
+- template support, based on Handlebars/FlavourSaver (it's important to remove all Nerdblog.pl related stuff from app and I cannot keep changed version of the app forever)
 - RSS/iTunes feed (!)
 - decouple from my app because it was finished in hurry and still has stuff that shouldn't be in this repo
 - check what is wrong with mime types for audio
@@ -16,7 +17,6 @@ Also, it's written in RoR so modifying it is a breeze, compared to apocalyptic P
 - publish at specific hour
 
 ### For future, when I'm ready to open source this project
-- template support, based on Handlebars/FlavourSaver
 - support for autoposting on Twitter and Facebook in the future
 - advanced transcript support
   - possibly with timestamps / subtitles?
