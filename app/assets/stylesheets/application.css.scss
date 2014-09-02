@@ -114,5 +114,34 @@ header.card {
 }
 
 .container.container-static {
-  width: 600px !important
+  max-width: 600px !important
+}
+
+footer.copyright {
+  margin: 20px;
+  span, a {
+    text-shadow: 0 -1px 0 #222;
+    color: #555;
+  }
+
+  span {    
+    &:before {
+      display: inline-block;
+      content: '•';
+      width: 20px;
+      text-align: center;
+    }
+
+    &:first-child:before {
+      display: none;
+    }
+  }
+
+  a {
+    &:hover {
+      text-shadow: 0 -1px 0 #000;
+      color: #888;
+      text-decoration: none;
+    }
+  }
 }
