@@ -106,6 +106,13 @@ header.card {
   }
 }
 
+.card.share {
+  text-align: center;
+  * {
+    box-sizing: content-box;
+  }
+}
+
 .container.container-static {
   width: 600px !important
 }

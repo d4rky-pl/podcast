@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   def index
-    @podcasts = Podcast.available.page(params[:page])
+    @podcasts = Podcast.available.order('created_at desc').page(params[:page])
     respond_to do |format|
+      format.html
       format.rss do
         first_podcast = @podcasts.first
         if first_podcast.present?
@@ -10,7 +11,7 @@ class HomeController < ApplicationController
         else
           pub_date = last_build_date = Time.now.to_s(:rfc822)
         end
-        render locals: { pub_date: pub_date, last_build_date: last_build_date, podcasts: @podcasts }
+        render locals: { pub_date: pub_date, last_build_date: last_build_date, podcasts: @podcasts }, content_type: 'text/xml'
       end
     end
   end

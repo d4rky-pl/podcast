@@ -14,6 +14,7 @@
       <th>Created at</th>
       <th>Published at</th>
       <th>Published?</th>
+      <th>Status</th>
       <th></th>
       <th></th>
     </tr>
@@ -35,6 +36,18 @@
                     <% end %>
                   <% end %>
                 </td>
+                <td>
+                  <%= link_to [:admin, podcast] do %>
+                    <% if podcast.processing? %>
+                      <i class="glyphicon glyphicon-refresh text-warning"></i>
+                    <% elsif podcast.success? %>
+                      <i class="glyphicon glyphicon-ok text-success"></i>
+                    <% elsif podcast.broken? %>
+                      <i class="glyphicon glyphicon-warning-sign text-danger"></i>
+                    <% end %>
+                  <% end %>
+                </td>
+
                 <td class="text-right">
           <%= link_to 'Edit', edit_admin_podcast_path(podcast), class: 'btn btn-primary' %>
         </td>

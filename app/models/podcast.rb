@@ -32,6 +32,6 @@ class Podcast < ActiveRecord::Base
   end
 
   def to_param
-    "#{id}-#{title.parameterize}"
+    "#{id}-#{title.parameterize('_')}"
   end
 end

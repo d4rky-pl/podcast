@@ -11,7 +11,7 @@ gem 'haml-rails'
 gem 'admin-panel'
 gem 'devise'
 gem 'simple_form', '3.1.0.rc2'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.2.0.0'
 gem 'kaminari'
 
 gem 'carrierwave'
