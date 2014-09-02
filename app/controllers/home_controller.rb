@@ -1,6 +1,18 @@
 class HomeController < ApplicationController
   def index
     @podcasts = Podcast.available.page(params[:page])
+    respond_to do |format|
+      format.rss do
+        first_podcast = @podcasts.first
+        if first_podcast.present?
+          pub_date = first_podcast.published_at.to_s(:rfc822)
+          last_build_date = first_podcast.published_at.to_s(:rfc822)
+        else
+          pub_date = last_build_date = Time.now.to_s(:rfc822)
+        end
+        render locals: { pub_date: pub_date, last_build_date: last_build_date, podcasts: @podcasts }
+      end
+    end
   end
 
   def podcast

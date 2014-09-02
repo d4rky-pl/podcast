@@ -23,6 +23,10 @@ class Podcast < ActiveRecord::Base
     update! status_message: message
   end
 
+  def description_md
+    GitHub::Markup.render('.md', self.description.to_s).html_safe
+  end
+
   def update_published_at
     self.published_at = Time.now if published && published_changed?
   end
