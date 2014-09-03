@@ -7,9 +7,9 @@ Also, it's written in RoR so modifying it is a breeze, compared to apocalyptic P
 ### Important features and fixes
 
 - template support, based on Handlebars/FlavourSaver (it's important to remove all Nerdblog.pl related stuff from app and I cannot keep changed version of the app forever)
-- RSS/iTunes feed (!)
 - decouple from my app because it was finished in hurry and still has stuff that shouldn't be in this repo
-- check what is wrong with mime types for audio
+- ~~RSS/iTunes feed (!)~~
+- ~~check what is wrong with mime types for audio~~
 
 ### Less important but still to do asap
 - transcript support
@@ -17,7 +17,8 @@ Also, it's written in RoR so modifying it is a breeze, compared to apocalyptic P
 - publish at specific hour
 
 ### For future, when I'm ready to open source this project
-- support for autoposting on Twitter and Facebook in the future
+- tagging support
+- support for autoposting on Twitter and Facebook
 - advanced transcript support
   - possibly with timestamps / subtitles?
   - maybe I could generate a video file with background image and subtitles on it? but that's an idea for the far future
