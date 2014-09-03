@@ -44,6 +44,5 @@ class PodcastCell < Cell::ViewModel
         [:mp3, 'audio/mpeg'],
         [:m4a, 'audio/mp4']
     ]
-    %w(ogg mp3 m4a)
   end
 end
