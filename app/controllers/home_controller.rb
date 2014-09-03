@@ -27,6 +27,7 @@ class HomeController < ApplicationController
     stream = podcast.stream.send(format)
 
     response.headers['X-Accel-Redirect'] = stream.path.sub(Rails.root.to_s, '')
+    response.headers['Content-Type'] = stream.content_type
     render nothing: true
   end
 
