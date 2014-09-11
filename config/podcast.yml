@@ -1,0 +1,16 @@
+default: &default
+  blog_title: 'Nerdblog.pl Podcast'
+  available_formats:
+    - ogg
+    - mp3
+    - m4a
+
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

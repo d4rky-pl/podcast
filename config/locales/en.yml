@@ -21,4 +21,6 @@
 
 en:
   podcast:
-    published_at: 'Published %{time} ago'
+    published_at: 'published: %{time}'
+    relative_published_at: 'published %{time} ago'
+    not_published: 'not published yet'

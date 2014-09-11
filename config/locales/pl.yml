@@ -2,7 +2,7 @@ pl:
   podcast:
     relative_published_at: 'opublikowano %{time} temu'
     published_at: 'opublikowano: %{time}'
-
+    not_published: 'jeszcze nie opublikowano'
 
   devise:
     confirmations:

@@ -10,6 +10,16 @@ class Podcast < ActiveRecord::Base
 
   scope :available, -> { where('status = ? and published = ?', 1, true) }
 
+  def publish!
+    self.published = true
+    save!
+  end
+
+  def unpublish!
+    self.published = false
+    save!
+  end
+
   def before_upload(message=nil)
     update! status: 0
   end
@@ -21,10 +31,6 @@ class Podcast < ActiveRecord::Base
   def after_upload_failure(message=nil)
     broken!
     update! status_message: message
-  end
-
-  def description_md
-    GitHub::Markup.render('.md', self.description.to_s).html_safe
   end
 
   def update_published_at
