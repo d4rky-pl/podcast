@@ -16,7 +16,7 @@ module Template::Helpers
   end
 
   def feed_url
-    Rails.application.routes.url_helpers.feed_url
+    Rails.application.routes.url_helpers.feed_url(host: @request.host_with_port)
   end
 
   def page

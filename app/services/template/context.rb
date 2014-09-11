@@ -1,7 +1,8 @@
 class Template::Context < Mustache
   include ::Template::Helpers
 
-  def initialize(data)
+  def initialize(request, data={})
+    @request = request
     @data = data
   end
 

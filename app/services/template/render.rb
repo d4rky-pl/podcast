@@ -1,5 +1,6 @@
 class Template::Render
-  def initialize(layout=:default)
+  def initialize(request, layout=:default)
+    @request = request
     @layout = layout
   end
 
@@ -9,7 +10,7 @@ class Template::Render
     data.config = config
 
     page_class = "Template::Context::#{page.camelize}".constantize
-    page_class_instance = page_class.new data
+    page_class_instance = page_class.new @request, data
     page_class_instance.template_file = Rails.root.join('templates', "#{@layout}.mustache").to_s
     page_class_instance.render
   end

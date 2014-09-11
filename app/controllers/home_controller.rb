@@ -32,7 +32,7 @@ class HomeController < ApplicationController
   end
 
   def render_template(context, data)
-    render inline: Template::Render.new.render(context, data), layout: false
+    render inline: Template::Render.new(request).render(context, data), layout: false
   end
 
   def render_rss
