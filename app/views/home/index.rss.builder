@@ -18,7 +18,7 @@ xml.rss :version => "2.0", 'xmlns:itunes' => "http://www.itunes.com/dtds/podcast
         xml.author "#{podcast.admin.email} (#{podcast.admin.display_name})"
 
         xml.content :encoded do
-          xml.cdata! podcast.description_md
+          xml.cdata! GitHub::Markup.render('.md', podcast.description.to_s)
         end
 
         xml.enclosure url: stream_url(podcast, {format: :m4a}), type: 'audio/x-m4a', length: podcast.stream.m4a.length

@@ -16,7 +16,7 @@ module Template::Helpers
   end
 
   def feed_url
-    Rails.application.routes.url_helpers.feed_path
+    Rails.application.routes.url_helpers.feed_url
   end
 
   def page
